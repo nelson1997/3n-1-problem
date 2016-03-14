@@ -17,15 +17,20 @@ int sumArray(int i){
 int main(void)
 {
 	int start=0, end=0;
-	scanf("%d %d", &start , &end );
 	
+	scanf("%d %d", &start , &end );
+	if(start>end){
+		int r=start;
+		start=end;
+		end=r;
+	}
 
 	int i,            max=0;
 	for(i=start;i<=end;i++){
 		int temp=sumArray(i);
 		if(temp>max)max=temp;
 	}
-	printf("%d %d %d\n",start,end,max);
+	printf("%d %d %d",start,end,max);
 	
 	return 0;
 }
